@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ToDo.Models.List>
+
+@{
+    ViewBag.Title = "Lists";
+}
+
+<h2 class="PageTitle">ToDo Lists</h2>
+
+<div class="LeftEditButton">
+    <a class="buttonAdmin" href='@Url.Action("Create")'>
+        <img src="~/Content/images/add.png" />
+        create list
+    </a>
+</div>
+
+@foreach (var item in Model)
+{
+
+    @Html.ActionLink(item.Text, "DetailList/" + item.Id, new object { }, new { @class = "buttonONeList" })
+    <br />
+}
+
+

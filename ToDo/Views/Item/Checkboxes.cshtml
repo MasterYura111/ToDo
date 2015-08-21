@@ -1,0 +1,11 @@
+﻿@model ToDo.Models.List
+Items:
+<ul class="ulItems">
+    @foreach (var item in Model.Items)
+    {
+        <li>
+            <input type="checkbox" name="selectedItems" Id="@item.Id"
+                   @(item.Checked ? "checked=\"checked\"" : "") />@item.Text <br />
+            </li>
+    }
+</ul>

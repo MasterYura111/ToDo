@@ -1,0 +1,171 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+footer {
+    text-align: center;
+}
+
+h2.PageTitle {
+    text-align: center;
+}
+
+.LeftEditButton {
+    float: right;
+}
+
+.buttonAdmin img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+
+/*list*/
+.ulCategories,
+.ulItems {
+    list-style-type: none;
+}
+
+    .ulCategories input,
+    .ulItems input {
+        margin-right: 10px;
+    }
+
+.ItemSaveConfirm {
+    display: none;
+    font: 16px;
+    color: green;
+}
+
+.NewItemtemplate {
+    display: none;
+}
+
+.inpItem {
+    margin-top: 20px;
+}
+
+
+.buttonONeList {
+    min-width: 200px;
+    background-color: #ffffe0;
+    padding: 5px;
+    border: 1px solid #fed22f;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #222;
+    text-decoration: none;
+}
+
+    .buttonONeList:hover {
+        border-color: black;
+        text-decoration: none;
+        color: #428bca;
+    }
+
+
+.buttonAdmin {
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+    background: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+    background-color: #ededed;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #777777;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 6px 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+    .buttonAdmin:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+        background: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+        background: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+        background: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+        background: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+        background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
+        background-color: #dfdfdf;
+    }
+
+    .buttonAdmin:active {
+        position: relative;
+        top: 1px;
+    }
+
+.titleOneList {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.markSaveSuccess {
+    height: 20px;
+}
+
+.col-md-2 {
+    width: auto;
+}
+
+.deleteItemFromList img {
+    width: 25px;
+    border: 1px solid white;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.deleteItemFromList :hover {
+    border-color: black;
+    cursor: pointer;
+}
+
+.input-inline {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.tableCategories td:first-child {
+    min-width: 200px;
+}
+
+.tableCategories {
+    width: auto;
+}

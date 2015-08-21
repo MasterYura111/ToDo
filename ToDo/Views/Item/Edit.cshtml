@@ -1,0 +1,59 @@
+﻿@model List<ToDo.Models.Item>
+@{
+    ViewBag.Title = "Edit items to list";
+}
+
+<h2 class="PageTitle">Edit items to list</h2>
+<hr />
+
+List: <b>@ViewBag.List.Text</b>
+
+<hr />
+<div class="LeftEditButton">
+    <a class="buttonAdmin" onclick="AddItem(this);">
+        <img src="~/Content/images/add.png" />
+        add Item
+    </a>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.Hidden("ListId", (object)ViewBag.ListId)
+    for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="OneItemInp">
+            @Html.HiddenFor(m => m[i].Id)
+            @Html.TextBoxFor(m => m[i].Text, new { @class = "form-control input-inline" })
+            @Html.ValidationMessageFor(m => m[i].Text, "", new { @class = "text-danger" })
+
+            <span class="deleteItemFromList" onclick="DeleteOneItem(this);">
+                <img src="~/Content/images/delete.png" />
+            </span>
+        </div>
+
+    }
+
+    @Html.Hidden("countItem", Model.Count)
+    <div class="NewItem">
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+}
+<br />
+<hr />
+<div>
+    <a class="buttonAdmin" href='@Url.Action("DetailList/" + ViewBag.ListId,"List")'>
+        <img src="~/Content/images/back.png" />
+        back to list
+    </a>
+</div>
+
+@Scripts.Render("~/Scripts/jquery-1.10.2.js")
+@Scripts.Render("~/Scripts/Item.js")
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

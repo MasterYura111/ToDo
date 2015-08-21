@@ -1,0 +1,54 @@
+﻿@using ToDo.Models
+@model ToDo.Models.List
+
+@{
+    ViewBag.Title = "Edit List";
+}
+
+<h2 class="PageTitle">Edit List</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr/>
+        <div class="LeftEditButton">
+            <a class="buttonAdmin" href='@Url.Action("Delete/" + Model.Id)'>
+                <img src="~/Content/images/delete.png" />
+                delete list
+            </a>
+        </div>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.Partial("~/Views/Category/Checkboxes.cshtml")
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<hr/>
+<div>
+    <a class="buttonAdmin" href='@Url.Action("DetailList/" + Model.Id)'>
+        <img src="~/Content/images/back.png" />
+        back to list
+    </a>
+    
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

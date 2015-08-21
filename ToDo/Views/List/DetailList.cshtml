@@ -1,0 +1,51 @@
+﻿@model ToDo.Models.List
+
+@{
+    ViewBag.Title = "Detail List";
+}
+
+<h2 class="PageTitle">Detail List</h2>
+
+<div>
+    <hr/>
+    <span class="titleOneList">@Html.DisplayFor(model => model.Text)</span>
+    <div class="LeftEditButton">
+        <a class="buttonAdmin" href='@Url.Action("Edit/" + Model.Id)'>
+            <img src="~/Content/images/edit.png"/>
+            edit list
+        </a>
+    </div>
+    <br/>
+    <br/>
+    Categories:
+    <ul>
+        @foreach (var cat in Model.Categories)
+        {
+            <li>@cat.Text</li>
+        }
+    </ul>
+    <hr/>
+    <div class="LeftEditButton">
+        <a class="buttonAdmin" href='@Url.Action("Edit/" + Model.Id, "Item")'>
+            <img src="~/Content/images/edit.png"/>
+            edit items
+        </a>
+    </div>
+    @Html.Partial("~/Views/Item/Checkboxes.cshtml")
+    <div class="markSaveSuccess">
+        <span class="ItemSaveConfirm">saved successfully</span>    
+    </div>
+    
+</div>
+<hr/>
+<p>
+   
+    <a class="buttonAdmin" href='@Url.Action("Lists")'>
+        <img src="~/Content/images/back.png" />
+        back to lists
+    </a>
+   
+</p>
+@Scripts.Render("~/Scripts/jquery-1.10.2.js")
+@Scripts.Render("~/Scripts/DetailList.js")
+

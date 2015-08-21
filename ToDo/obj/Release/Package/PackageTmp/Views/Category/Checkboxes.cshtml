@@ -1,0 +1,10 @@
+﻿Categories:
+<ul class="ulCategories">
+    @foreach (var cat in ViewBag.Categories)
+    {
+        <li>
+            <input type="checkbox" name="selectedCategories" value="@cat.Id"
+                   @(Model != null ? (Model.Categories.Contains(cat) ? "checked=\"checked\"" : "") : "")/>@cat.Text <br/>
+            </li>
+    }
+</ul>

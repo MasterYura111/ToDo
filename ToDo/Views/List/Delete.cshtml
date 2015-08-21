@@ -1,0 +1,36 @@
+﻿@model ToDo.Models.List
+
+@{
+    ViewBag.Title = "Delete list confirm";
+}
+
+<h2 class="PageTitle">Delete list confirm</h2>
+
+Are you sure you want to delete this list and all his item?
+<div>
+
+    <hr/>
+    List:
+    <b>
+        @Html.DisplayFor(model => model.Text)
+    </b>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <br/>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-default"/>
+            </div>
+        </div>
+    }
+</div>
+<br/>
+<hr />
+<div >
+    <a class="buttonAdmin" href='@Url.Action("DetailList/" + Model.Id)'>
+        <img src="~/Content/images/back.png" />
+        back to list
+    </a>
+</div>

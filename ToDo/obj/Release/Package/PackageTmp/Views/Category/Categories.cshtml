@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ToDo.Models.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+<h2 class="PageTitle">Categories</h2>
+<hr />
+<div class="LeftEditButton">
+    <a class="buttonAdmin" href='@Url.Action("Create")'>
+        <img src="~/Content/images/add.png" />
+        create category
+    </a>
+</div>
+<br />
+<br />
+<table class="table tableCategories">
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                <a class="buttonAdmin" href='@Url.Action("Edit/" + item.Id)'>
+                    <img src="~/Content/images/edit.png" />
+                    edit
+                </a>
+
+            </td>
+        </tr>
+    }
+
+</table>
